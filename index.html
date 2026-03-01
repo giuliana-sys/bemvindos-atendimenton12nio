@@ -1,1 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveg Fibra | Internet de qualidade em Maceió</title>
+    <meta name="description" content="Provedor de internet fibra ótica em Maceió. Planos residenciais e empresariais com alta velocidade e estabilidade. Conheça nossas ofertas!">
+    <!-- Google / Search Console Tags (opcional - apenas exemplo) -->
+    <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230a3b5b'/%3E%3Cpath d='M30 40 L50 25 L70 40 L70 65 L50 80 L30 65 Z' fill='%23f9f9f9' stroke='%23f9a51c' stroke-width='3'/%3E%3C/svg%3E">
+    
+    <!-- Tailwind CSS via CDN (para facilitar a estilização responsiva) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts (opcional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a3b5b 0%, #1a5f7a 100%);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            color: white;
+        }
+        .price-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
 
+    <!-- Botão flutuante WhatsApp (boa prática para conversão) -->
+    <a href="https://wa.me/5582996999999?text=Olá!%20Gostaria%20de%20informações%20sobre%20os%20planos%20Naveg%20Fibra" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Nome -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-wifi text-2xl text-[#0a3b5b] mr-2"></i>
+                        <span class="font-bold text-xl text-[#0a3b5b]">Naveg Fibra</span>
+                    </div>
+                </div>
+                <!-- Links desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-[#f9a51c] font-medium">Início</a>
+                    <a href="#quem-somos" class="text-gray-700 hover:text-[#f9a51c] font-medium">Quem Somos</a>
+                    <a href="#planos" class="text-gray-700 hover:text-[#f9a51c] font-medium">Planos</a>
+                    <a href="#contato" class="text-gray-700 hover:text-[#f9a51c] font-medium">Contato</a>
+                </div>
+                <!-- CTA Telefone -->
+                <div class="hidden md:block">
+                    <a href="tel:82996999999" class="bg-[#f9a51c] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#d4890c] transition"><i class="fas fa-phone-alt mr-2"></i>(82) 99699-9999</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-4 pt-2 pb-4">
+            <a href="#inicio" class="block py-2 text-gray-700 hover:text-[#f9a51c] font-medium">Início</a>
+            <a href="#quem-somos" class="block py-2 text-gray-700 hover:text-[#f9a51c] font-medium">Quem Somos</a>
+            <a href="#planos" class="block py-2 text-gray-700 hover:text-[#f9a51c] font-medium">Planos</a>
+            <a href="#contato" class="block py-2 text-gray-700 hover:text-[#f9a51c] font-medium">Contato</a>
+            <a href="tel:82996999999" class="block mt-2 bg-[#f9a51c] text-white px-4 py-2 rounded-lg text-center"><i class="fas fa-phone-alt mr-2"></i>(82) 99699-9999</a>
+        </div>
+    </nav>
+
+    <!-- HERO / INÍCIO -->
+    <section id="inicio" class="hero-gradient text-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Internet Fibra com estabilidade e velocidade em Maceió</h1>
+                <p class="text-xl mb-8">Planos residenciais e empresariais com a melhor tecnologia. Navegue sem limites!</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#planos" class="bg-[#f9a51c] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#d4890c] transition inline-flex items-center"><i class="fas fa-tags mr-2"></i>Ver Planos</a>
+                    <a href="#contato" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-[#0a3b5b] transition inline-flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Fale Conosco</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f4f8'/%3E%3Ccircle cx='200' cy='150' r='60' fill='%230a3b5b'/%3E%3Cpath d='M140 150 Q200 80 260 150' stroke='%23f9a51c' stroke-width='8' fill='none' stroke-linecap='round' /%3E%3Cpath d='M160 180 Q200 240 240 180' stroke='%23f9a51c' stroke-width='8' fill='none' stroke-linecap='round' /%3E%3Ctext x='200' y='200' text-anchor='middle' fill='white' font-size='40' font-weight='bold' font-family='Arial'%3ENF%3C/text%3E%3C/svg%3E" alt="Naveg Fibra - Internet" class="rounded-lg max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- SELOS DE CONFIABILIDADE (dados oficiais) -->
+    <section class="bg-gray-100 py-8 border-t border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-700">
+                <div class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2"></i>CNPJ 18.484.424/0002-15</div>
+                <div class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2"></i>Fundada em 2017</div>
+                <div class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2"></i>Empresa de Pequeno Porte</div>
+                <div class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2"></i>Simples Nacional</div>
+                <div class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2"></i>Ativa na Receita</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUEM SOMOS -->
+    <section id="quem-somos" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#0a3b5b] mb-4">Quem Somos</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Conheça a Naveg Fibra, seu provedor de confiança em Maceió.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                        <p class="text-lg leading-relaxed mb-4"><span class="font-bold text-[#f9a51c]">Naveg Fibra</span> (Correia & Cia LTDA) atua desde 2017 fornecendo acesso à internet de alta qualidade. Somos uma empresa de pequeno porte, optante pelo Simples Nacional, com capital social de R$ 70.000,00 e total dedicação à satisfação dos nossos clientes.</p>
+                        <p class="text-lg leading-relaxed mb-4">Nossa sede está localizada em Maceió/AL, no bairro Jatiuca, e oferecemos serviços de provedor de internet (SCM), consultoria em TI, suporte técnico, monitoramento de sistemas de segurança e muito mais.</p>
+                        <p class="text-lg leading-relaxed">Registrado sob CNPJ 18.484.424/0002-15, nosso quadro societário é formado por Ayrton Correia Cavalcante (Sócio-Administrador) e Joao Paulo Correia Cavalcante (Sócio). Estamos prontos para atender você e sua empresa com responsabilidade e inovação.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="bg-[#0a3b5b] text-white p-6 rounded-lg text-center">
+                        <i class="fas fa-tachometer-alt text-4xl mb-2 text-[#f9a51c]"></i>
+                        <h3 class="font-bold text-xl">+2.500</h3>
+                        <p>Clientes ativos</p>
+                    </div>
+                    <div class="bg-[#0a3b5b] text-white p-6 rounded-lg text-center">
+                        <i class="fas fa-calendar-alt text-4xl mb-2 text-[#f9a51c]"></i>
+                        <h3 class="font-bold text-xl">8 anos</h3>
+                        <p>Experiência</p>
+                    </div>
+                    <div class="bg-[#0a3b5b] text-white p-6 rounded-lg text-center">
+                        <i class="fas fa-headset text-4xl mb-2 text-[#f9a51c]"></i>
+                        <h3 class="font-bold text-xl">Suporte 24h</h3>
+                        <p>Pronto pra ajudar</p>
+                    </div>
+                    <div class="bg-[#0a3b5b] text-white p-6 rounded-lg text-center">
+                        <i class="fas fa-shield-alt text-4xl mb-2 text-[#f9a51c]"></i>
+                        <h3 class="font-bold text-xl">Segurança</h3>
+                        <p>Monitoramento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS E SERVIÇOS (CNAEs) -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#0a3b5b] mb-4">Nossos Serviços</h2>
+                <p class="text-xl text-gray-600">Soluções completas em conectividade e tecnologia.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- CNAE principal -->
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-[#f9a51c]">
+                    <i class="fas fa-satellite-dish text-3xl text-[#0a3b5b] mb-3"></i>
+                    <h3 class="font-bold text-xl mb-2">61.90-6-01 - Provedores de acesso</h3>
+                    <p class="text-gray-600">Acesso à internet banda larga via fibra ótica para residências e empresas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-[#f9a51c]">
+                    <i class="fas fa-laptop-code text-3xl text-[#0a3b5b] mb-3"></i>
+                    <h3 class="font-bold text-xl mb-2">62.04-0-00 - Consultoria em TI</h3>
+                    <p class="text-gray-600">Consultoria especializada em tecnologia da informação para negócios.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-[#f9a51c]">
+                    <i class="fas fa-video text-3xl text-[#0a3b5b] mb-3"></i>
+                    <h3 class="font-bold text-xl mb-2">80.20-0-01 - Monitoramento eletrônico</h3>
+                    <p class="text-gray-600">Sistemas de segurança eletrônica e monitoramento 24h.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-[#f9a51c]">
+                    <i class="fas fa-tools text-3xl text-[#0a3b5b] mb-3"></i>
+                    <h3 class="font-bold text-xl mb-2">95.11-8-00 - Reparação de computadores</h3>
+                    <p class="text-gray-600">Manutenção de computadores e equipamentos periféricos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-[#f9a51c]">
+                    <i class="fas fa-phone-alt text-3xl text-[#0a3b5b] mb-3"></i>
+                    <h3 class="font-bold text-xl mb-2">61.10-8-03 - SCM</h3>
+                    <p class="text-gray-600">Serviço de comunicação multimídia com qualidade e estabilidade.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-[#f9a51c]">
+                    <i class="fas fa-chart-line text-3xl text-[#0a3b5b] mb-3"></i>
+                    <h3 class="font-bold text-xl mb-2">73.19-0-99 - Publicidade</h3>
+                    <p class="text-gray-600">Atividades de publicidade e promoção de vendas.</p>
+                </div>
+                <!-- mais CNAEs resumidos -->
+            </div>
+            <p class="text-center text-gray-500 mt-6 text-sm">Demais atividades: aluguel de máquinas, suporte técnico, manutenção de equipamentos de comunicação.</p>
+        </div>
+    </section>
+
+    <!-- PLANOS E PREÇOS -->
+    <section id="planos" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#0a3b5b] mb-4">Planos e Preços</h2>
+                <p class="text-xl text-gray-600">Escolha o plano ideal para sua necessidade. Todos com fibra ótica de verdade.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Plano 1 -->
+                <div class="price-card border border-gray-200 rounded-xl p-6 bg-white hover:border-[#f9a51c]">
+                    <h3 class="text-2xl font-bold text-[#0a3b5b] mb-2">Básico</h3>
+                    <p class="text-gray-600 mb-4">Ideal para navegação leve</p>
+                    <div class="mb-4">
+                        <span class="text-4xl font-bold text-[#f9a51c]">R$ 89,90</span><span class="text-gray-500">/mês</span>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>100 MB de download</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>50 MB de upload</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Wi-Fi incluso</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Suporte 24h</li>
+                    </ul>
+                    <a href="https://wa.me/5582996999999?text=Quero%20o%20plano%20Básico%20100MB" class="block text-center bg-[#0a3b5b] text-white py-2 rounded-lg hover:bg-[#0a2a40] transition">Contratar</a>
+                </div>
+                <!-- Plano 2 Destaque -->
+                <div class="price-card border-2 border-[#f9a51c] rounded-xl p-6 bg-white relative transform scale-105 shadow-xl">
+                    <div class="absolute top-0 right-0 bg-[#f9a51c] text-white px-3 py-1 text-sm font-bold rounded-tr-xl rounded-bl-xl">MAIS VENDIDO</div>
+                    <h3 class="text-2xl font-bold text-[#0a3b5b] mb-2">Intermediário</h3>
+                    <p class="text-gray-600 mb-4">Perfeito para famílias</p>
+                    <div class="mb-4">
+                        <span class="text-4xl font-bold text-[#f9a51c]">R$ 129,90</span><span class="text-gray-500">/mês</span>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>300 MB de download</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>150 MB de upload</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Wi-Fi 6 + Roteador</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Suporte prioritário</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Instalação grátis</li>
+                    </ul>
+                    <a href="https://wa.me/5582996999999?text=Quero%20o%20plano%20Intermediário%20300MB" class="block text-center bg-[#f9a51c] text-white py-2 rounded-lg hover:bg-[#d4890c] transition">Contratar</a>
+                </div>
+                <!-- Plano 3 -->
+                <div class="price-card border border-gray-200 rounded-xl p-6 bg-white">
+                    <h3 class="text-2xl font-bold text-[#0a3b5b] mb-2">Empresarial</h3>
+                    <p class="text-gray-600 mb-4">Para negócios exigentes</p>
+                    <div class="mb-4">
+                        <span class="text-4xl font-bold text-[#f9a51c]">R$ 249,90</span><span class="text-gray-500">/mês</span>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>600 MB simétrico</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>IP fixo incluso</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>SLA 99,9%</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Suporte N1 dedicado</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Monitoramento incluso</li>
+                    </ul>
+                    <a href="https://wa.me/5582996999999?text=Quero%20o%20plano%20Empresarial%20600MB" class="block text-center bg-[#0a3b5b] text-white py-2 rounded-lg hover:bg-[#0a2a40] transition">Contratar</a>
+                </div>
+            </div>
+            <p class="text-center mt-8 text-gray-500">*Preços promocionais para novos clientes. Consulte condições.</p>
+        </div>
+    </section>
+
+    <!-- CONTATO, LOCALIZAÇÃO, ENDEREÇO -->
+    <section id="contato" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#0a3b5b] mb-4">Fale com a Naveg Fibra</h2>
+                <p class="text-xl text-gray-600">Estamos localizados em Maceió. Entre em contato!</p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Info de contato e endereço -->
+                <div class="lg:w-1/2 bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold mb-6 text-[#0a3b5b]">Informações para contato</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-[#f9a51c] text-xl w-8 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Endereço (Matriz):</p>
+                                <p>Rua Maria Breda, 111 - Quadra 22<br>Jatiuca, Maceió - AL, 57036-280</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Maria+Breda+111+Jatiuca+Maceio" target="_blank" class="text-[#0a3b5b] underline text-sm">Ver no mapa</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-[#f9a51c] text-xl w-8"></i>
+                            <div>
+                                <p class="font-semibold">Telefone / WhatsApp:</p>
+                                <p>(82) 99699-9999 (falar com comercial)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-[#f9a51c] text-xl w-8"></i>
+                            <div>
+                                <p class="font-semibold">E-mail:</p>
+                                <p>contato@navegfibra.com.br</p>
+                                <!-- como o original tinha parcial, coloco um fictício profissional -->
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-[#f9a51c] text-xl w-8"></i>
+                            <div>
+                                <p class="font-semibold">Horário de atendimento:</p>
+                                <p>Segunda a sexta, 8h às 18h | Suporte 24h via WhatsApp</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 border-t pt-6">
+                        <p class="text-sm text-gray-500 mb-2"><span class="font-bold">CNPJ:</span> 18.484.424/0002-15</p>
+                        <p class="text-sm text-gray-500"><span class="font-bold">Razão Social:</span> Correia & Cia LTDA</p>
+                    </div>
+                </div>
+                <!-- Mapa / endereço visual (Google Maps embed) -->
+                <div class="lg:w-1/2 bg-white p-4 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold mb-4 text-[#0a3b5b]">Onde estamos</h3>
+                    <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.281567132953!2d-35.7267812!3d-9.6681663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70145c1a3c4a4c1%3A0x9c7b8c7b8c7b8c7b!2sR.%20Maria%20Breda%2C%20111%20-%20Jati%C3%BAca%2C%20Macei%C3%B3%20-%20AL%2C%2057036-280!5e0!3m2!1spt-BR!2sbr!4v1711900000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POLÍTICA DE PRIVACIDADE (link) -->
+    <section class="py-8 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-600">© 2025 Naveg Fibra - Todos os direitos reservados. | <a href="#" onclick="openPrivacyModal(); return false;" class="text-[#0a3b5b] underline">Política de Privacidade</a> | Desenvolvido para Google Ads.</p>
+        </div>
+    </section>
+
+    <!-- Modal Política de Privacidade (simples) -->
+    <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[200] p-4">
+        <div class="bg-white rounded-xl max-w-2xl max-h-[80vh] overflow-y-auto p-8 relative">
+            <button onclick="closePrivacyModal()" class="absolute top-4 right-4 text-gray-600 hover:text-black text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold text-[#0a3b5b] mb-4">Política de Privacidade</h2>
+            <p class="mb-3">A Naveg Fibra (Correia & Cia LTDA) valoriza a privacidade dos seus clientes e visitantes. Esta política descreve como tratamos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei 13.709/18).</p>
+            <p class="mb-3"><strong>Coleta de informações:</strong> Coletamos nome, e-mail, telefone, endereço e dados de navegação necessários para a prestação dos serviços de internet e atendimento.</p>
+            <p class="mb-3"><strong>Uso das informações:</strong> Utilizamos para contato, faturamento, suporte técnico e melhoria da experiência. Não compartilhamos dados com terceiros sem consentimento, exceto obrigações legais.</p>
+            <p class="mb-3"><strong>Armazenamento:</strong> Seus dados são armazenados de forma segura em servidores próprios ou contratados, com acesso restrito.</p>
+            <p class="mb-3"><strong>Direitos do titular:</strong> Você pode solicitar correção, exclusão ou portabilidade dos dados através dos nossos canais oficiais.</p>
+            <p class="mb-3"><strong>Cookies:</strong> Este site utiliza cookies para melhorar a navegação e para campanhas de Google Ads. Ao continuar navegando, você concorda.</p>
+            <p class="mb-3">Em caso de dúvidas, entre em contato: <strong>contato@navegfibra.com.br</strong> ou (82) 99699-9999.</p>
+            <p>Esta política pode ser atualizada periodicamente.</p>
+        </div>
+    </div>
+
+    <!-- Script para menu mobile e modal -->
+    <script>
+        // Menu mobile toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Modal Política de Privacidade
+        const modal = document.getElementById('privacyModal');
+        function openPrivacyModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        function closePrivacyModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+        // Fechar clicando fora do conteúdo
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closePrivacyModal();
+        });
+    </script>
+
+    <!-- Google Ads remarketing tag (placeholder) - Estrutura para adicionar o código do Google Ads posteriormente -->
+    <!-- 
+    <script>
+        // Exemplo de tag global do Google (gtag.js) - substituir pelo ID da sua conta
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-XXXXXXXXX');
+    </script>
+    -->
+</body>
+</html>
